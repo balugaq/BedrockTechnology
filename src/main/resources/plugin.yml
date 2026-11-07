@@ -3,7 +3,7 @@ author: CTimet
 description: A generic Slimefun4-Addon
 main: io.github.ctimet.bedrocktechnology.BektMain
 website: https://github.com/CTimet/BedrockTechnology
-version: ${project.version}
+version: ${version}
 api-version: 1.17
 depend:
 - Slimefun

@@ -7,3 +7,15 @@
 .classpath
 dependency-reduced-pom.xml
 .DS_Store
+
+.workbuddy/
+.gradle/
+!gradle-wrapper.jar
+!**/gradle-wrapper.jar
+!lib/*.jar
+run/
+server/
+
+# Gradle 构建产物
+build/
+out/

@@ -2,7 +2,6 @@ package io.github.ctimet.bedrocktechnology.data;
 
 import io.github.ctimet.bedrocktechnology.BektMain;
 import io.github.ctimet.bedrocktechnology.util.Config;
-import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.Location;
 
 import java.sql.Connection;
@@ -73,7 +72,7 @@ public class StickData {
     }
 
     public static synchronized void putData(UUID uuid, Location location) {
-        storage.put(uuid, location, BlockStorage.getBlockInfoAsJson(location));
+        storage.put(uuid, location, BlockDataSnapshot.snapshot(location));
     }
     
     public static synchronized void removeData(Location location) {

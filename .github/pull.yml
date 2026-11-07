@@ -1,0 +1,9 @@
+version: "1"
+rules:
+  - base: master
+    upstream: CTimetbukii:master
+    mergeMethod: merge
+    assignees:
+      - balugaq
+    conflictReviewers:
+      - balugaq

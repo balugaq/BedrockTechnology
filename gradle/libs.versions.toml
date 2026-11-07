@@ -1,0 +1,29 @@
+[versions]
+# 原 pom 用 spigot-api 1.17.1，随 Slimefun4 2025.1 升到 1.21；特意用 spigot-api 而非
+# paper-api：后者带 Gradle 模块元数据（声明需 Java 21），与本项目 Java 17 目标字节码变体冲突
+spigot-api = "1.21-R0.1-SNAPSHOT"
+slimefun4 = "2025.1"
+guizhanlib = "1.8.1"
+mysql = "8.4.0"
+druid = "1.2.23"
+jsr305 = "3.0.2"
+# 原 pom 通过旧 spigot-api 传递 commons-lang 2.x；spigot-api 1.21 不再传递，改为显式引入 lang3
+commons-lang3 = "3.14.0"
+
+shadow = "9.2.2"
+run-paper = "3.1.0"
+lombok = "1.18.34"
+
+[libraries]
+spigot-api = { module = "org.spigotmc:spigot-api", version.ref = "spigot-api" }
+slimefun4 = { module = "com.github.SlimefunGuguProject:Slimefun4", version.ref = "slimefun4" }
+guizhanlib = { module = "net.guizhanss:GuizhanLib-api", version.ref = "guizhanlib" }
+mysql = { module = "com.mysql:mysql-connector-j", version.ref = "mysql" }
+druid = { module = "com.alibaba:druid", version.ref = "druid" }
+jsr305 = { module = "com.google.code.findbugs:jsr305", version.ref = "jsr305" }
+commons-lang3 = { module = "org.apache.commons:commons-lang3", version.ref = "commons-lang3" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok" }
+
+[plugins]
+shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
+run-paper = { id = "xyz.jpenilla.run-paper", version.ref = "run-paper" }

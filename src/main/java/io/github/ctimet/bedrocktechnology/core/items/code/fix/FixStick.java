@@ -1,5 +1,6 @@
 package io.github.ctimet.bedrocktechnology.core.items.code.fix;
 
+import io.github.ctimet.bedrocktechnology.data.BlockDataSnapshot;
 import io.github.ctimet.bedrocktechnology.data.StickData;
 import io.github.ctimet.bedrocktechnology.util.PlayerChat;
 import io.github.thebusybiscuit.slimefun4.api.events.PlayerRightClickEvent;
@@ -65,7 +66,7 @@ public class FixStick extends SlimefunItem {
         if (BlockStorage.check(location) == null) {
             String data = StickData.getData(location);
             if (data == null) return false;
-            BlockStorage.setBlockInfo(location, data, true);
+            BlockDataSnapshot.restore(location, data);
             return true;
         } else {
             return false;
