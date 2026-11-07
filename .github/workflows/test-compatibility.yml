@@ -95,7 +95,7 @@ jobs:
       - name: Run Paper server and load plugin
         id: run-server
         run: |
-          cp build/libs/*.jar server/plugins/
+          find build/libs -name "*.jar" ! -name "*-sources.jar" -exec cp {} server/plugins/ ;
 
           VER="${{ matrix.version }}"
 
